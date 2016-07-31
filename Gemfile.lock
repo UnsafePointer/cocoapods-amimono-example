@@ -24,6 +24,7 @@ GEM
       molinillo (~> 0.4.5)
       nap (~> 1.0)
       xcodeproj (>= 1.1.0, < 2.0)
+    cocoapods-amimono (0.0.1)
     cocoapods-core (1.0.1)
       activesupport (>= 4.0.2)
       fuzzy_match (~> 2.0.4)
@@ -61,6 +62,7 @@ PLATFORMS
 
 DEPENDENCIES
   cocoapods
+  cocoapods-amimono
 
 BUNDLED WITH
    1.12.5

@@ -111,10 +111,10 @@
 			buildConfigurationList = 3F042EDF1D4E3C3E00FFE41A /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
 				9A7EB2178785568C9730AF5B /* [CP] Check Pods Manifest.lock */,
+				44A3BD43CB1BDE6015587453 /* [Amimono] Create filelist per architecture */,
 				3F042EC41D4E3C3D00FFE41A /* Sources */,
 				3F042EC51D4E3C3D00FFE41A /* Frameworks */,
 				3F042EC61D4E3C3D00FFE41A /* Resources */,
-				2193D47B7FD8F55192AA4D0C /* [CP] Embed Pods Frameworks */,
 				4D9E31C63D3C12194ADEA08E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -173,20 +173,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2193D47B7FD8F55192AA4D0C /* [CP] Embed Pods Frameworks */ = {
+		44A3BD43CB1BDE6015587453 /* [Amimono] Create filelist per architecture */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[Amimono] Create filelist per architecture";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellPath = /usr/bin/ruby;
+			shellScript = "#!/usr/bin/ruby\nintermediates_directory = ENV['OBJROOT']\nconfiguration = ENV['CONFIGURATION']\nplatform = ENV['EFFECTIVE_PLATFORM_NAME']\narchs = ENV['ARCHS']\n\narchs.split(\" \").each do |architecture|\n  Dir.chdir(\"#{intermediates_directory}/Pods.build\") do\n    filelist = \"\"\n    Dir.glob(\"#{configuration}#{platform}/*.build/Objects-normal/#{architecture}/*.o\") do |object_file|\n      filelist += File.absolute_path(object_file) + \"\\n\"\n    end\n    File.write(\"#{configuration}#{platform}-#{architecture}.objects.filelist\", filelist)\n  end\nend\n";
 		};
 		4D9E31C63D3C12194ADEA08E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
