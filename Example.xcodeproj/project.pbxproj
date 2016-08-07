@@ -14,6 +14,7 @@
 		3F042ED81D4E3C3E00FFE41A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F042ED71D4E3C3E00FFE41A /* Assets.xcassets */; };
 		3F042EDB1D4E3C3E00FFE41A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F042ED91D4E3C3E00FFE41A /* LaunchScreen.storyboard */; };
 		3F87BCC61D5783E200AC7790 /* ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F87BCC51D5783E200AC7790 /* ExampleTests.m */; };
+		3F87BCCF1D57882F00AC7790 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F87BCCE1D57882F00AC7790 /* File.swift */; };
 		5736364F115FCA939A787C3B /* Pods_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BDD65CDD45719C6EDA07A4 /* Pods_ExampleTests.framework */; };
 		665F98C96342C7DAD007F69A /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F5F9006085FDDE8CD9977E /* Pods_Example.framework */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,8 @@
 		3F87BCC31D5783E200AC7790 /* ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F87BCC51D5783E200AC7790 /* ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTests.m; sourceTree = "<group>"; };
 		3F87BCC71D5783E200AC7790 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F87BCCD1D57882F00AC7790 /* Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		3F87BCCE1D57882F00AC7790 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		4B87D28C2B315CA1D2A0C5E4 /* Pods-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleTests/Pods-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		75BDD65CDD45719C6EDA07A4 /* Pods_ExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F5F9006085FDDE8CD9977E /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +116,8 @@
 				3F042ED91D4E3C3E00FFE41A /* LaunchScreen.storyboard */,
 				3F042EDC1D4E3C3E00FFE41A /* Info.plist */,
 				3F042ECB1D4E3C3E00FFE41A /* Supporting Files */,
+				3F87BCCE1D57882F00AC7790 /* File.swift */,
+				3F87BCCD1D57882F00AC7790 /* Example-Bridging-Header.h */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -259,7 +264,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /usr/bin/ruby;
-			shellScript = "#!/usr/bin/ruby\nintermediates_directory = ENV['OBJROOT']\nconfiguration = ENV['CONFIGURATION']\nplatform = ENV['EFFECTIVE_PLATFORM_NAME']\narchs = ENV['ARCHS']\ntarget_name = ENV['TARGET_NAME']\n\narchs.split(\" \").each do |architecture|\n  Dir.chdir(\"#{intermediates_directory}/Pods.build\") do\n    filelist = \"\"\n    [\"AFNetworking\"].each do |dependency|\n      Dir.glob(\"#{configuration}#{platform}/#{dependency}.build/Objects-normal/#{architecture}/*.o\") do |object_file|\n        next if [\"Pods-#{target_name}-dummy\", \"Pods_#{target_name}_vers\"].any? { |dummy_object| object_file.include? dummy_object }\n        filelist += File.absolute_path(object_file) + \"\\n\"\n      end\n    end\n    File.write(\"#{configuration}#{platform}-#{architecture}.objects.filelist\", filelist)\n  end\nend\n";
+			shellScript = "#!/usr/bin/ruby\nintermediates_directory = ENV['OBJROOT']\nconfiguration = ENV['CONFIGURATION']\nplatform = ENV['EFFECTIVE_PLATFORM_NAME']\narchs = ENV['ARCHS']\ntarget_name = ENV['TARGET_NAME']\n\narchs.split(\" \").each do |architecture|\n  Dir.chdir(\"#{intermediates_directory}/Pods.build\") do\n    filelist = \"\"\n    [\"AFNetworking\", \"ImagePicker\"].each do |dependency|\n      Dir.glob(\"#{configuration}#{platform}/#{dependency}.build/Objects-normal/#{architecture}/*.o\") do |object_file|\n        next if [\"Pods-#{target_name}-dummy\", \"Pods_#{target_name}_vers\"].any? { |dummy_object| object_file.include? dummy_object }\n        filelist += File.absolute_path(object_file) + \"\\n\"\n      end\n    end\n    File.write(\"#{configuration}#{platform}-#{architecture}.objects.filelist\", filelist)\n  end\nend\n";
 		};
 		44D6F65205724357466B231E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -344,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F042ED31D4E3C3E00FFE41A /* ViewController.m in Sources */,
+				3F87BCCF1D57882F00AC7790 /* File.swift in Sources */,
 				3F042ED01D4E3C3E00FFE41A /* AppDelegate.m in Sources */,
 				3F042ECD1D4E3C3E00FFE41A /* main.m in Sources */,
 			);
@@ -474,10 +480,13 @@
 			baseConfigurationReference = B67ACED7ABE3BA8A1F6DBEDC /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruenzuo.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Example/Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -486,10 +495,12 @@
 			baseConfigurationReference = E51EBADC1364922AE47C9CF2 /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruenzuo.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Example/Example-Bridging-Header.h";
 			};
 			name = Release;
 		};

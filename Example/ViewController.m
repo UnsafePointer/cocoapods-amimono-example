@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <AFNetworking/AFNetworking.h>
+@import ImagePicker;
 
 @interface ViewController ()
 
@@ -35,6 +36,11 @@
         }
     }];
     [dataTask resume];
+}
+
+- (IBAction)showImagePicker {
+    ImagePickerController *controller = [[ImagePickerController alloc] init];
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 @end

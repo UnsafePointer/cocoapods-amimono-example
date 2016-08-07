@@ -14,16 +14,19 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - ImagePicker (1.2)
   - OCMock (3.3)
 
 DEPENDENCIES:
   - AFNetworking
+  - ImagePicker
   - OCMock
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  ImagePicker: 85f14ed6872f46c08d210077b5540a890a6cd151
   OCMock: d68685bde31f69cb61d518dcb39269080c78b5ed
 
-PODFILE CHECKSUM: 482fd5d92e4174446390346f15d7cb44b6739d09
+PODFILE CHECKSUM: c0e9ae79f4ea814d8cd8052697a25303d69a4890
 
 COCOAPODS: 1.0.1
