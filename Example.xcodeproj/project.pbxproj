@@ -111,7 +111,7 @@
 			buildConfigurationList = 3F042EDF1D4E3C3E00FFE41A /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
 				9A7EB2178785568C9730AF5B /* [CP] Check Pods Manifest.lock */,
-				44A3BD43CB1BDE6015587453 /* [Amimono] Create filelist per architecture */,
+				122A008B3D12D6B5061A2F60 /* [Amimono] Create filelist per architecture */,
 				3F042EC41D4E3C3D00FFE41A /* Sources */,
 				3F042EC51D4E3C3D00FFE41A /* Frameworks */,
 				3F042EC61D4E3C3D00FFE41A /* Resources */,
@@ -173,7 +173,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		44A3BD43CB1BDE6015587453 /* [Amimono] Create filelist per architecture */ = {
+		122A008B3D12D6B5061A2F60 /* [Amimono] Create filelist per architecture */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -185,7 +185,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /usr/bin/ruby;
-			shellScript = "#!/usr/bin/ruby\nintermediates_directory = ENV['OBJROOT']\nconfiguration = ENV['CONFIGURATION']\nplatform = ENV['EFFECTIVE_PLATFORM_NAME']\narchs = ENV['ARCHS']\n\narchs.split(\" \").each do |architecture|\n  Dir.chdir(\"#{intermediates_directory}/Pods.build\") do\n    filelist = \"\"\n    Dir.glob(\"#{configuration}#{platform}/*.build/Objects-normal/#{architecture}/*.o\") do |object_file|\n      filelist += File.absolute_path(object_file) + \"\\n\"\n    end\n    File.write(\"#{configuration}#{platform}-#{architecture}.objects.filelist\", filelist)\n  end\nend\n";
+			shellScript = "#!/usr/bin/ruby\nintermediates_directory = ENV['OBJROOT']\nconfiguration = ENV['CONFIGURATION']\nplatform = ENV['EFFECTIVE_PLATFORM_NAME']\narchs = ENV['ARCHS']\ntarget_name = ENV['TARGET_NAME']\n\narchs.split(\" \").each do |architecture|\n  Dir.chdir(\"#{intermediates_directory}/Pods.build\") do\n    filelist = \"\"\n    [\"AFNetworking\"].each do |dependency|\n      Dir.glob(\"#{configuration}#{platform}/#{dependency}.build/Objects-normal/#{architecture}/*.o\") do |object_file|\n        next if [\"Pods-#{target_name}-dummy\", \"Pods_#{target_name}_vers\"].any? { |dummy_object| object_file.include? dummy_object }\n        filelist += File.absolute_path(object_file) + \"\\n\"\n      end\n    end\n    File.write(\"#{configuration}#{platform}-#{architecture}.objects.filelist\", filelist)\n  end\nend\n";
 		};
 		4D9E31C63D3C12194ADEA08E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
