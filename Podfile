@@ -2,8 +2,9 @@ platform :ios, '9.0'
 
 plugin 'cocoapods-amimono'
 
+use_frameworks!
+
 target 'Example' do
-  use_frameworks!
   pod 'AFNetworking'
   pod 'ImagePicker'
 
@@ -11,6 +12,10 @@ target 'Example' do
     inherit! :search_paths
     pod 'OCMock'
   end
+end
+
+target 'Example WatchKit 1 Extension' do
+  pod 'AFNetworking'
 end
 
 post_install do |installer|

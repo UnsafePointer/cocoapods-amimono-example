@@ -30,9 +30,9 @@
 
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
-            NSLog(@"Error: %@", error);
+            NSLog(@"iOS app: Error: %@", error);
         } else {
-            NSLog(@"%@ %@", response, responseObject);
+            NSLog(@"iOS app: %@ %@", response, responseObject);
         }
     }];
     [dataTask resume];

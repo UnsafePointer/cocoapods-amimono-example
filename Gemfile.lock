@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/Ruenzuo/cocoapods-amimono.git
+  revision: 63b84d1f1bc9709d4e0e72caa8745dea330c3be1
+  specs:
+    cocoapods-amimono (0.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -24,7 +30,6 @@ GEM
       molinillo (~> 0.4.5)
       nap (~> 1.0)
       xcodeproj (>= 1.1.0, < 2.0)
-    cocoapods-amimono (0.0.2)
     cocoapods-core (1.0.1)
       activesupport (>= 4.0.2)
       fuzzy_match (~> 2.0.4)
@@ -62,7 +67,7 @@ PLATFORMS
 
 DEPENDENCIES
   cocoapods
-  cocoapods-amimono
+  cocoapods-amimono!
 
 BUNDLED WITH
    1.12.5
