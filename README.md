@@ -11,12 +11,13 @@ This is:
 * Using a Swift written Pod
 * Pods include resource bundles
 * Project has a testing target (also using CocoaPods)
+* Project has a Watch OS 1 target
 
 A project like this has successfully passed iTunes Connect validation.
 
 TODO:
 
-* Embedded targets: extensions, watchOS
+* Embedded targets with a different platform (ie: not iphoneos or iphonesimulator): watchOS 2
 
 ## About this plugin
 
