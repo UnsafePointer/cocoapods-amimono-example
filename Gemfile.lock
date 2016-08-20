@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/Ruenzuo/cocoapods-amimono.git
-  revision: 63b84d1f1bc9709d4e0e72caa8745dea330c3be1
+  revision: 19c761b3ee512c0daa0e8b9e52fae0a916e6b554
   specs:
-    cocoapods-amimono (0.0.2)
+    cocoapods-amimono (0.0.3)
 
 GEM
   remote: https://rubygems.org/

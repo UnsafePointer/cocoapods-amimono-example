@@ -20,5 +20,5 @@ end
 
 post_install do |installer|
   require 'cocoapods-amimono/patcher'
-  Amimono::Patcher.patch_copy_resources_script(installer: installer)
+  Amimono::Patcher.patch!(installer: installer)
 end
