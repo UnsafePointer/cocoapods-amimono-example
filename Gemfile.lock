@@ -1,16 +1,17 @@
 GIT
   remote: git://github.com/Ruenzuo/cocoapods-amimono.git
-  revision: 19c761b3ee512c0daa0e8b9e52fae0a916e6b554
+  revision: b8d1d43093e6f12bfb1c21d5e85ea6b35d47af02
   specs:
-    cocoapods-amimono (0.0.3)
+    cocoapods-amimono (0.0.5)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.0.0)
-      concurrent-ruby (~> 1.0, >= 1.0.2)
+    activesupport (4.2.7.1)
       i18n (~> 0.7)
+      json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
+      thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     claide (1.0.0)
     cocoapods (1.0.1)
@@ -45,12 +46,12 @@ GEM
       netrc (= 0.7.8)
     cocoapods-try (1.1.0)
     colored (1.2)
-    concurrent-ruby (1.0.2)
     escape (0.0.4)
     fourflusher (0.3.2)
     fuzzy_match (2.0.4)
     i18n (0.7.0)
-    minitest (5.9.0)
+    json (1.8.3)
+    minitest (5.9.1)
     molinillo (0.4.5)
     nap (1.1.0)
     netrc (0.7.8)
