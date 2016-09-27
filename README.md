@@ -42,7 +42,7 @@ Add the following to your `post_install` hook:
 ```ruby
 post_install do |installer|
   require 'cocoapods-amimono/patcher'
-  Amimono::Patcher.patch!(installer: installer)
+  Amimono::Patcher.patch!(installer)
   ...
 ```
 
