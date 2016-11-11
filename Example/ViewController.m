@@ -7,7 +7,9 @@
 //
 
 #import "ViewController.h"
+#if __has_include(<AFNetworking/AFNetworking.h>)
 #import <AFNetworking/AFNetworking.h>
+#endif
 @import ImagePicker;
 
 @interface ViewController ()

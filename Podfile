@@ -5,7 +5,7 @@ plugin 'cocoapods-amimono'
 use_frameworks!
 
 target 'Example' do
-  pod 'AFNetworking'
+  pod 'AFNetworking', configurations: ['Debug']
   pod 'ImagePicker'
 
   target 'ExampleTests' do
