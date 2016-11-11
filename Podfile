@@ -14,10 +14,6 @@ target 'Example' do
   end
 end
 
-target 'Example WatchKit 1 Extension' do
-  pod 'AFNetworking'
-end
-
 post_install do |installer|
   require 'cocoapods-amimono/patcher'
   Amimono::Patcher.patch!(installer)
