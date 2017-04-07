@@ -1,3 +1,8 @@
+PATH
+  remote: ../cocoapods-amimono
+  specs:
+    cocoapods-amimono (0.0.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -69,6 +74,7 @@ PLATFORMS
 
 DEPENDENCIES
   cocoapods
+  cocoapods-amimono!
 
 BUNDLED WITH
    1.14.6

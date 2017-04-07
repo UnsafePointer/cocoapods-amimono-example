@@ -246,12 +246,12 @@
 			buildConfigurationList = 3F042EDF1D4E3C3E00FFE41A /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
 				9A7EB2178785568C9730AF5B /* [CP] Check Pods Manifest.lock */,
+				781C4330BEAC3C85214D240E /* [Amimono] Create filelist per architecture */,
 				3F042EC41D4E3C3D00FFE41A /* Sources */,
 				3F042EC51D4E3C3D00FFE41A /* Frameworks */,
 				3F042EC61D4E3C3D00FFE41A /* Resources */,
 				4D9E31C63D3C12194ADEA08E /* [CP] Copy Pods Resources */,
 				DAE167031D5DC3C900ACD2D3 /* Embed App Extensions */,
-				83266F9B0A441293C234A188 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -468,6 +468,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ExampleTests/Pods-ExampleTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		781C4330BEAC3C85214D240E /* [Amimono] Create filelist per architecture */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[Amimono] Create filelist per architecture";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "declare -a DEPENDENCIES=('AFNetworking' 'ImagePicker');\nIFS=\" \" read -r -a SPLIT <<< \"$ARCHS\"\nfor ARCH in \"${SPLIT[@]}\"; do\n  cd \"$OBJROOT/Pods.build\"\n  filelist=\"\"\n  for dependency in \"${DEPENDENCIES[@]}\"; do\n    path=\"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${dependency}.build/Objects-normal/${ARCH}\"\n    if [ -d \"$path\" ]; then\n      search_path=\"$path/*.o\"\n      for obj_file in $search_path; do\n        filelist+=\"${OBJROOT}/Pods.build/${obj_file}\"\n        filelist+=$'\\n'\n      done\n    fi\n  done\n  filelist=${filelist%$'\\n'}\n  echo \"$filelist\" > \"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}-${TARGET_NAME}-${ARCH}.objects.filelist\"\ndone\n";
+			showEnvVarsInLog = 1;
+		};
 		7FF01D7FBFB484EE075ECA50 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -481,21 +496,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example WatchKit 1 Extension/Pods-Example WatchKit 1 Extension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		83266F9B0A441293C234A188 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8A7F4B11570A6AEFCAE59F44 /* [CP] Check Pods Manifest.lock */ = {
