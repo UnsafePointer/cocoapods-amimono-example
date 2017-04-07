@@ -1,7 +1,7 @@
 # cocoapods-amimono-example
 
 <p align="center">
-  <img src="https://dl.dropboxusercontent.com/u/12352209/GitHub/amimono-example.gif" alt="amimono-example"/>
+  <img src="https://raw.githubusercontent.com/Ruenzuo/res/master/amimono-example.gif" alt="amimono-example"/>
 </p>
 
 This is:
