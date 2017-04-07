@@ -7,6 +7,8 @@ use_frameworks!
 target 'Example' do
   pod 'AFNetworking', '~> 3.1'
   pod 'ImagePicker', '~> 2.1'
+  pod 'Fabric'
+  pod 'Crashlytics'
 
   target 'ExampleTests' do
     inherit! :search_paths
