@@ -5,8 +5,8 @@ plugin 'cocoapods-amimono'
 use_frameworks!
 
 target 'Example' do
-  pod 'AFNetworking'
-  pod 'ImagePicker'
+  pod 'AFNetworking', '~> 3.1'
+  pod 'ImagePicker', '~> 2.1'
 
   target 'ExampleTests' do
     inherit! :search_paths
@@ -15,7 +15,7 @@ target 'Example' do
 end
 
 target 'Example WatchKit 1 Extension' do
-  pod 'AFNetworking'
+  pod 'AFNetworking', '~> 3.1'
 end
 
 post_install do |installer|
