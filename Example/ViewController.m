@@ -20,7 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [Fabric with:@[[Crashlytics class]]];
+    [Crashlytics class];
+    [Fabric class];
     [self doSomethingWithAFNetworking];
 }
 

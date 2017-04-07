@@ -1,5 +1,6 @@
-PATH
-  remote: ../cocoapods-amimono
+GIT
+  remote: git://github.com/Ruenzuo/cocoapods-amimono.git
+  revision: 12c4f0bd586e0f01c65862a0283151499f6e1fae
   specs:
     cocoapods-amimono (0.0.7)
 
