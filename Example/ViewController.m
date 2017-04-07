@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import <AFNetworking/AFNetworking.h>
 @import ImagePicker;
+@import Fabric;
+@import Crashlytics;
 
 @interface ViewController ()
 
@@ -18,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [Fabric with:@[[Crashlytics class]]];
     [self doSomethingWithAFNetworking];
 }
 
