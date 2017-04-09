@@ -11,6 +11,7 @@
 @import ImagePicker;
 @import Fabric;
 @import Crashlytics;
+@import ExampleFramework;
 
 @interface ViewController ()
 
@@ -22,6 +23,7 @@
     [super viewDidLoad];
     [Crashlytics class];
     [Fabric class];
+    [ExampleClass class];
     [self doSomethingWithAFNetworking];
 }
 
