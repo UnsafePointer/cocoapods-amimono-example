@@ -1,10 +1,8 @@
-platform :ios, '9.0'
-
 plugin 'cocoapods-amimono'
-
 use_frameworks!
 
 target 'Example' do
+  platform :ios, '10.0'
   pod 'AFNetworking', '~> 3.1'
   pod 'ImagePicker', '~> 2.1'
   pod 'Fabric'
@@ -16,11 +14,8 @@ target 'Example' do
   end
 end
 
-target 'Example WatchKit 1 Extension' do
-  pod 'AFNetworking', '~> 3.1'
-end
-
 target 'Example WatchKit 3 App Extension' do
+  platform :watchos, '3.0'
   pod 'AFNetworking', '~> 3.1'
 end
 
