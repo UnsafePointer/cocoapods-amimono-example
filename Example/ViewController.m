@@ -12,6 +12,7 @@
 @import Fabric;
 @import Crashlytics;
 @import ExampleFramework;
+@import AppsFlyerLib;
 
 @interface ViewController ()
 
@@ -24,6 +25,7 @@
     [Crashlytics class];
     [Fabric class];
     [ExampleClass class];
+    [AppsFlyerTracker sharedTracker];
     [self doSomethingWithAFNetworking];
 }
 

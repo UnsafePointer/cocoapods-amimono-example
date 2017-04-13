@@ -7,6 +7,7 @@ target 'Example' do
   pod 'ImagePicker', '~> 2.1'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'AppsFlyerFramework'
 
   target 'ExampleTests' do
     inherit! :search_paths
