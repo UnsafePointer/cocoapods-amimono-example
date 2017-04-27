@@ -27,7 +27,7 @@ GEM
       nap (~> 1.0)
       ruby-macho (~> 0.2.5)
       xcodeproj (>= 1.4.1, < 2.0)
-    cocoapods-amimono (0.0.9)
+    cocoapods-amimono (0.0.10)
     cocoapods-core (1.2.0)
       activesupport (>= 4.0.2, < 5)
       fuzzy_match (~> 2.0.4)
@@ -70,7 +70,7 @@ PLATFORMS
 
 DEPENDENCIES
   cocoapods
-  cocoapods-amimono (= 0.0.9)
+  cocoapods-amimono (= 0.0.10)
 
 BUNDLED WITH
    1.14.6

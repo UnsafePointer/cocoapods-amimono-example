@@ -8,6 +8,7 @@ target 'Example' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'AppsFlyerFramework'
+  pod 'NSObject+Rx'
 
   target 'ExampleTests' do
     inherit! :search_paths

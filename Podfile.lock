@@ -19,7 +19,10 @@ PODS:
     - Fabric (~> 1.6.3)
   - Fabric (1.6.11)
   - ImagePicker (2.1.1)
+  - NSObject+Rx (2.0.0):
+    - RxSwift
   - OCMock (3.4)
+  - RxSwift (3.3.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1)
@@ -27,6 +30,7 @@ DEPENDENCIES:
   - Crashlytics
   - Fabric
   - ImagePicker (~> 2.1)
+  - NSObject+Rx
   - OCMock
 
 SPEC CHECKSUMS:
@@ -35,8 +39,10 @@ SPEC CHECKSUMS:
   Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   ImagePicker: fe4c699abb56ff03994fa98d8b02e3883ee118be
+  NSObject+Rx: 2a9cd801d9c847e6d2486cbad8d7701b67834e70
   OCMock: 35ae71d6a8fcc1b59434d561d1520b9dd4f15765
+  RxSwift: 8fc9f2de6275a9101d518444e00bf32f1a42caac
 
-PODFILE CHECKSUM: 5bb454d14858e218ed0f079a7cd106f06c0f53a2
+PODFILE CHECKSUM: f36ca7090c8123877b270633ef4095efe11d4a8b
 
 COCOAPODS: 1.2.0
