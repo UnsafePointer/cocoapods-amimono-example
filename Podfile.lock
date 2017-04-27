@@ -19,6 +19,7 @@ PODS:
     - Fabric (~> 1.6.3)
   - Fabric (1.6.11)
   - ImagePicker (2.1.1)
+  - leveldb-library (1.18.2)
   - OCMock (3.4)
 
 DEPENDENCIES:
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - Crashlytics
   - Fabric
   - ImagePicker (~> 2.1)
+  - leveldb-library
   - OCMock
 
 SPEC CHECKSUMS:
@@ -35,8 +37,9 @@ SPEC CHECKSUMS:
   Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   ImagePicker: fe4c699abb56ff03994fa98d8b02e3883ee118be
+  leveldb-library: ef0453697c0fda3a9e550e5650e52976e6724548
   OCMock: 35ae71d6a8fcc1b59434d561d1520b9dd4f15765
 
-PODFILE CHECKSUM: 5bb454d14858e218ed0f079a7cd106f06c0f53a2
+PODFILE CHECKSUM: 940fc83503bd842aa2fb40d904cdddfcdf4455be
 
 COCOAPODS: 1.2.0

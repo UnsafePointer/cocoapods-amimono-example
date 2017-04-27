@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 
 gem "cocoapods"
-gem "cocoapods-amimono", '0.0.9'
+gem "cocoapods-amimono", git: 'git://github.com/ruenzuo/cocoapods-amimono'
